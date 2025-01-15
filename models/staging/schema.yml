@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: snowflake_source
+    database: dbt_etl
+    schema: staging
+    description: snowflake staging layer
+
+    tables:
+      - name: orders
+        description: stores order database
+
+        columns:
+          - name: order_id
+            description: A unique order ID
+            tests:
+              - unique
+              - not_null
+          - name: product_id
+            description: A unique product ID
+          - name: quantity
+            description: A random quantity between 1 and 5
+          - name: price
+            description: A random price between 10 and 500
+          - name: total_amount
+            description: This is calculated as quantity * price
+
+models:
+  - name: orders
