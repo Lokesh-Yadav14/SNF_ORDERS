@@ -25,5 +25,3 @@ sources:
           - name: total_amount
             description: This is calculated as quantity * price
 
-models:
-  - name: orders

@@ -10,7 +10,7 @@
 
 with incremental_data as (
     select
-        *
+       *
     from
         {{ ref('stg_orders') }}
 
@@ -28,7 +28,7 @@ with incremental_data as (
         OrderId,
         ProductId,
         QuantityOrdered,
-        Price,
+        price,
         TotalAmount,
         ChangeTime,
         '{{ invocation_id }}' as batch_id

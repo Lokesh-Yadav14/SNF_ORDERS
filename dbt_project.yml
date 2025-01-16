@@ -32,10 +32,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   SNF_ORDERS:
     staging:
-      +database: dbt_etl
-      +schema: staging  # Logical layer, not directly related to DBT_ETL schema
       +materialized: view  # Materialized as a view for the staging layer
-    base:
-      +schema: base
-      +database: dbt_core  # Explicitly target DBT_CORE database
-      +materialized: table
+    
